@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Память про Героя</title>
+    <title>Пам'ять про Героя</title>
     <style>
         /* Базові налаштування стилю (Темна витончена тема) */
         body {
@@ -179,36 +179,6 @@
             border-radius: 12px;
             margin-bottom: 25px;
             box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-        }
-
-        /* СТИЛІ ДЛЯ БЛОКУ БІОГРАФІЇ */
-        .bio-text {
-            font-size: 15px;
-            line-height: 1.7;
-            color: #e0e0e0;
-            text-align: justify;
-        }
-
-        .bio-text p {
-            margin-top: 0;
-            margin-bottom: 15px;
-            text-indent: 15px; /* Абзацний відступ */
-        }
-
-        .bio-text p:last-child {
-            margin-bottom: 0;
-        }
-
-        .bio-honor {
-            text-align: center;
-            font-style: italic;
-            font-weight: bold;
-            color: #d4af37;
-            margin-top: 20px;
-            font-size: 16px;
-            line-height: 1.6;
-            border-top: 1px solid rgba(212, 175, 55, 0.2);
-            padding-top: 15px;
         }
 
         /* Блок: Плеєр та Музика */
@@ -389,6 +359,36 @@
             background-color: #2a2a2a;
         }
 
+        /* СТИЛІ ДЛЯ ВЕЛИКОГО БЛОКУ БІОГРАФІЇ ВНИЗУ */
+        .bio-text {
+            font-size: 15px;
+            line-height: 1.7;
+            color: #e0e0e0;
+            text-align: justify;
+        }
+
+        .bio-text p {
+            margin-top: 0;
+            margin-bottom: 15px;
+            text-indent: 15px; /* Гарний абзацний відступ */
+        }
+
+        .bio-text p:last-child {
+            margin-bottom: 0;
+        }
+
+        .bio-honor {
+            text-align: center;
+            font-style: italic;
+            font-weight: bold;
+            color: #d4af37;
+            margin-top: 25px;
+            font-size: 16px;
+            line-height: 1.6;
+            border-top: 1px solid rgba(212, 175, 55, 0.2);
+            padding-top: 15px;
+        }
+
         /* Футер */
         .footer {
             text-align: center;
@@ -400,6 +400,7 @@
 </head>
 <body>
 
+    <!-- ЕКРАН-ЗАСТАВКА З ФОНОМ (Захист від блокування звуку) -->
     <div id="intro-overlay">
         <div class="heart">💔💔💔</div>
         <div class="intro-title"><div>Віталій</div> <div>Малюшевський</div></div>
@@ -409,11 +410,13 @@
 
     <div class="container">
 
+        <!-- БЛОК 1: ГОЛОВНИЙ ЕКРАН -->
         <div class="hero-section">
             <img src="vimg/01.jpg" alt="Фото Віталіка" class="profile-photo">
             <h1>ВІТАЛІЙ МАЛЮШЕВСЬКИЙ</h1>
             <div class="dates">29.09.2000 — 30.04.2026</div>
             
+            <!-- БЛОК ДЕТАЛЕЙ З БІЛИМ ТЕКСТОМ ТА ЧЕРВОНИМИ ЛІНІЯМИ -->
             <div class="hero-details">
                 Загинув поблизу н.п. Піщане,
                 Харківської області
@@ -425,33 +428,20 @@
 
         <hr>
 
-        <div class="block">
-            <h2>Життєвий шлях Героя</h2>
-            <div class="bio-text">
-                <p>Напередодні повномасштабного вторгнення Віталій приїхав додому на свята. В останні роки через роботу за кордоном не завжди мав можливість бути поруч із родиною в такі моменти. Після свят планував знову повернутися на роботу за кордон, однак війна змінила всі плани.</p>
-                <p>У грудні, у віці 25 років, Віталія було призвано на військову службу. Спочатку він проходив навчання на Рівненщині, згодом продовжил підготовку в Черкаській області. Уже в квітні його було переведено на Харківський напрямок.</p>
-                <p>30 квітня 2026 року Віталій Малюшевський загинув внаслідок ворожих атак поблизу населеного пункту Піщане на Харківщині.</p>
-                <p>Звістка про його загибель стала болючим ударом для всієї родини, друзів, близьких та знайомих. Важко знайти слова, які могли б передати біль цієї втрати.</p>
-                <p>Та попри смуток, у серцях усіх, хто знав Віталія, назавжди залишиться пам'ять про світлу, добру та життєрадісну людину. Люблячий син, турботливий брат, надійний друг, працьовитий господар і щирий українець — саме таким його пам'ятатимуть усі, кому пощастило йти поруч із ним життєвою дорогою.</p>
-                
-                <div class="bio-honor">
-                    Світла пам'ять Герою.<br>
-                    Вічна шана і вдячність Віталію Малюшевському за його життя, доброту, людяність та жертовність заради України.
-                </div>
-            </div>
-        </div>
-
+        <!-- БЛОК 2: МУЗИКА ЙОГО ДУШІ -->
         <div class="block">
             <h2>Музика його душі</h2>
             <div class="audio-intro">
-                Віталік не уявляв свого життя без музики. Його фірмова колонка завжди була рядом — і в будні, і в свята, наповнюючи наше подвір'я звуками, під які хотілося жити.
+                Віталік не уявляв свого життя без музики. Його фірмова колонка завжди була поруч — і в будні, і в свята, наповнюючи наше подвір'я звуками, під які хотілося жити.
             </div>
             
+            <!-- Базовий тег аудіо -->
             <audio id="memorial-player" preload="auto">
                 <source id="audio-source" src="vmp3/Останній лист.mp3" type="audio/mpeg">
                 Ваш браузер не підтримує аудіоплеєр.
             </audio>
 
+            <!-- НАЛАШТОВАНИЙ КАСТОМНИЙ ПЛЕЄР -->
             <div class="custom-player-container">
                 <div class="track-main-title">
                     <span id="player-author" class="track-author">BIG.PASHAMAN</span>
@@ -473,6 +463,7 @@
 
             <div class="playlist-title">Улюблені пісні Віталіка:</div>
             
+            <!-- ІНТЕРАКТИВНИЙ СПИСОК ПІСЕНЬ -->
             <ul class="track-list" id="playlist">
                 <li class="track-item" data-src="vmp3/khlystun.mp3" data-author="Василь Хлистун" data-name="Хлопці будем жити">
                     <span class="track-icon">▶</span> 
@@ -505,6 +496,7 @@
             </div>
         </div>
 
+        <!-- БЛОК 3: СПОВІДЬ ГЕРОЯ -->
         <div class="block">
             <h2>Його сповідь перед рідними</h2>
             <div class="poem-text">
@@ -525,10 +517,11 @@
             </div>
         </div>
 
+        <!-- БЛОК 4: ЖИВА ПАМ'ЯТЬ -->
         <div class="block">
             <h2>Таким ми його пам'ятаємо</h2>
             <div class="audio-intro" style="margin-bottom: 10px;">
-                Нас п'ятеро в мами, і він завжди був нашим містком, нашою радощами та щирістю. Його посмішка на цих каднах залишається з нами назавжди.
+                Нас п'ятеро в мами, і він завжди був нашим містком, нашою радістю та щирістю. Його посмішка на цих кадрах залишається з нами назавжди.
             </div>
             <div class="gallery-grid">
                 <img src="vimg/02.jpg" alt="Кадр з життя 1" class="gallery-item">
@@ -538,156 +531,23 @@
             </div>
         </div>
 
-        <div class="footer">
-            Сторінку створено родиною з глибокою любов'ю та повагою.
-        </div>
-
-    </div>
-    
-<script>
-    const player = document.getElementById('memorial-player');
-    const audioSource = document.getElementById('audio-source');
-    const playBtn = document.getElementById('custom-play-btn');
-    const prevBtn = document.getElementById('custom-prev-btn');
-    const nextBtn = document.getElementById('custom-next-btn');
-    const progressBar = document.getElementById('progress-bar');
-    const progressContainer = document.getElementById('progress-container');
-    const timeDisplay = document.getElementById('time-display');
-    
-    const playerAuthor = document.getElementById('player-author');
-    const playerName = document.getElementById('player-name');
-    const playlistItems = Array.from(document.querySelectorAll('#playlist .track-item'));
-    
-    // Повний масив треків
-    const allTracks = [
-        {
-            src: "vmp3/Останній лист.mp3",
-            author: "BIG.PASHAMAN",
-            name: "Останній лист Віталія Малюшевського",
-            isMainOnly: true
-        },
-        ...playlistItems.map(item => ({
-            src: item.getAttribute('data-src'),
-            author: item.getAttribute('data-author'),
-            name: item.getAttribute('data-name'),
-            element: item
-        }))
-    ];
-    
-    let currentTrackIndex = 0; 
-
-    function initMemorialSite() {
-        const overlay = document.getElementById('intro-overlay');
-        
-        currentTrackIndex = 0; 
-        updateUI(); 
-        
-        // Спроба відтворення з безпечним обробником помилок (запобігає зависанню кнопки)
-        player.play().then(() => {
-            playBtn.innerText = '⏸';
-            playBtn.style.paddingLeft = '0px';
-        }).catch(error => {
-            console.log("Аудіофайл ще не завантажено на GitHub, але сайт відкриваємо:", error);
-        });
-
-        overlay.style.opacity = '0';
-        setTimeout(() => {
-            overlay.style.visibility = 'hidden';
-        }, 800);
-    }
-
-    function togglePlay(forcePlay = false) {
-        if (player.paused || forcePlay) {
-            player.play().then(() => {
-                playBtn.innerText = '⏸';
-                playBtn.style.paddingLeft = '0px';
-                updateUI();
-            }).catch(error => {
-                console.log("Не вдалося відтворити файл:", error);
-            });
-        } else {
-            player.pause();
-            playBtn.innerText = '▶';
-            playBtn.style.paddingLeft = '2px';
-            updateUI();
-        }
-    }
-
-    function changeTrack(index) {
-        if (index < 0) index = allTracks.length - 1;
-        if (index >= allTracks.length) index = 0;
-        
-        currentTrackIndex = index;
-        const track = allTracks[currentTrackIndex];
-        
-        audioSource.src = track.src;
-        player.load();
-        
-        playerAuthor.innerText = track.author;
-        playerName.innerText = track.name;
-        
-        updateUI();
-        togglePlay(true);
-    }
-
-    function updateUI() {
-        const isPlaying = !player.paused;
-        
-        playlistItems.forEach(item => {
-            item.classList.remove('active');
-            item.querySelector('.track-icon').innerText = '▶';
-        });
-
-        if (currentTrackIndex > 0) {
-            const currentTrack = allTracks[currentTrackIndex];
-            if (currentTrack.element) {
-                currentTrack.element.classList.add('active');
-                currentTrack.element.querySelector('.track-icon').innerText = isPlaying ? '⏸' : '▶';
-            }
-        }
-    }
-
-    playBtn.addEventListener('click', () => togglePlay());
-    
-    prevBtn.addEventListener('click', () => {
-        changeTrack(currentTrackIndex - 1);
-    });
-    
-    nextBtn.addEventListener('click', () => {
-        changeTrack(currentTrackIndex + 1);
-    });
-
-    playlistItems.forEach((item, index) => {
-        item.addEventListener('click', function() {
-            changeTrack(index + 1);
-        });
-    });
-
-    player.addEventListener('timeupdate', () => {
-        if (player.duration) {
-            const progressPercent = (player.currentTime / player.duration) * 100;
-            progressBar.style.width = `${progressPercent}%`;
-
-            const currentMins = Math.floor(player.currentTime / 60);
-            const currentSecs = Math.floor(player.currentTime % 60).toString().padStart(2, '0');
-            timeDisplay.innerText = `${currentMins}:${currentSecs}`;
-        }
-    });
-
-    progressContainer.addEventListener('click', (e) => {
-        const width = progressContainer.clientWidth;
-        const clickX = e.offsetX;
-        const duration = player.duration;
-
-        if (duration) {
-            player.currentTime = (clickX / width) * duration;
-        }
-    });
-
-    player.addEventListener('ended', () => {
-        changeTrack(currentTrackIndex + 1);
-    });
-</script>
-
-</body>
-</html>
+        <!-- БЛОК 5: ПОВНА ДЕТАЛЬНА БІОГРАФІЯ В САМОМУ НИЗУ -->
+        <div class="block">
+            <h2>Світла пам'ять: історія життя Віталія</h2>
+            <div class="bio-text">
+                <p>Віталій Малюшевський народився 29 вересня 2000 року в селищі Залізці Зборівського району Тернопільської області. Він зростав у великій та дружній родині, був середущою дитиною серед п'ятьох дітей. Разом із ним у сім'ї виховувалися старша сестра та троє братів — Юрій, Володимир, Назар і Христина.</p>
+                
+                <p>З раннього дитинства Віталій був працьовитим, відповідальним та щирим хлопцем. Він ніколи не цурався роботи, завжди допомагав батькам по господарству, на городі та вдома. Для рідних він був надійною опорою, людиною, на яку можна було покластися у будь-якій справі.</p>
+                
+                <p>Навчався у Залозецькій школі, де здобув базову освіту до 9 класу. Однокласники та вчителі пам'ятають його як доброзичливого, відкритого та щирого юнака, який легко знаходив спільну мову з людьми.</p>
+                
+                <p>Особливе місце в його житті займала церква та українські традиції. Віталій активно брав участь у церковному житті, прислуговував біля престолу, долучався до різних парафіяльних заходів. Щороку із великим захопленням брав участь у різдвяному вертепі, виконуючи різні ролі. Навіть коли був уже старшим, не полишав цієї традиції, адже щиро любив усе, що пов'язувало його з рідним краєм, громадою та українськими звичаями.</p>
+                
+                <p>Після закінчення школи вступив до Зборівського коледжу, де здобув фах будівельника. Під час навчання проявляв активність у громадському житті закладу, брав участь у творчих виступах та різноманітних заходах. Практику проходив у Польщі та Одесі, де здобував професійний досвід і вдосконалював свої навички.</p>
+                
+                <p>Віталій був людиною великих мрій і планів. Ще маленьким хлопчиком жартома пообіцяв мамі, що колись купить їй літак. За цією дитячою обіцянкою приховувалося його велике серце та бажання зробити щасливими найдорожчих людей. Він завжди прагнув більшого, ставив перед собою цілі та наполегливо працював задля їх досягнення.</p>
+                
+                <p>Однією з його найбільших мрій було облаштувати батьківський дім, зробити ремонти власними руками, створити для рідних затишок і комфорт. Він мав золоті руки, любив працювати та вмів виконувати будівельні роботи. Віталій часто говорив про свої плани на майбутнє, адже бачив свое життя поруч із сім'єю, у рідному домі.</p>
+                
+                <p>У дев'ятнадцять років він поїхав працювати до Нідерландів, де прожив і працював майже два з половиною роки. Там зарекомендував себе як сумлінний, відповідальний і професійний майстер. Працюючи поруч із досвідченими старшими колегами, він переймав їхні знання та постійно вдосконалював свої вміння. Завдяки своєму характеру легко знаходив спільну мову як із молодими людьми, так і зі старшими.</p>
+            
