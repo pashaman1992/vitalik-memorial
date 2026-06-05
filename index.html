@@ -550,4 +550,173 @@
                 <p>Однією з його найбільших мрій було облаштувати батьківський дім, зробити ремонти власними руками, створити для рідних затишок і комфорт. Він мав золоті руки, любив працювати та вмів виконувати будівельні роботи. Віталій часто говорив про свої плани на майбутнє, адже бачив свое життя поруч із сім'єю, у рідному домі.</p>
                 
                 <p>У дев'ятнадцять років він поїхав працювати до Нідерландів, де прожив і працював майже два з половиною роки. Там зарекомендував себе як сумлінний, відповідальний і професійний майстер. Працюючи поруч із досвідченими старшими колегами, він переймав їхні знання та постійно вдосконалював свої вміння. Завдяки своєму характеру легко знаходив спільну мову як із молодими людьми, так і зі старшими.</p>
-            
+                
+                <p>Віталій завжди був готовий прийти на допомогу. Він допомагав сусідам, друзям, знайомим, ніколи не залишався байдужим до чужих потреб. У його домі завжди радо зустрічали гостей, а сам він був привітним, гостинним та дружелюбним господарем.</p>
+                
+                <p>Він дуже любив природу. Поля, луки, свіже повітря були для нього місцем сили та душевного відпочинку. Окремою пристрастю було приготування їжі на вогні. Особливо любив готувати шашлики, гриби та різні страви на мангалі. Для нього це було не просто захоплення — це була особлива традиція, яка об'єднувала рідних і друзів за одним столом.</p>
+                
+                <p>Музика завжди супроводжувала його життя. Вдома, на роботі, у дорозі чи під час відпочинку — поруч із ним завжди звучали улюблені пісні. Особливе місце в його серці займала пісня «Хлопці, будем жити» Василя Хлистуна, яку він часто замовляв на святкуваннях і танцях. Сьогодні ця пісня стала особливо близькою для його рідних, адже кожна її нота нагадує про дорогого сина, брата, друга, який назавжди залишив слід у їхніх серцях.</p>
+                
+                <p>Віталій був душею компанії. Він умів створити гарний настрій, згуртувати людей навколо себе, подарувати усмішку та радість. Друзі пам'ятають його як веселого, щирого та життєрадісного хлопця, який часто приходив із колонкою, вмикав улюблену музику, і тоді звичайна зустріч перетворювалася на теплий та незабутній вечір.</p>
+                
+                <p>Напередодні повномасштабного вторгнення Віталій приїхав додому на свята. В останні роки через роботу за кордоном не завжди мав можливість бути поруч із родиною в такі моменти. Після свят планував знову повернутися на роботу за кордон, однак війна змінила всі плани.</p>
+                
+                <p>У грудні, у віці 25 років, Віталія було призвано на військову службу. Спочатку він проходив навчання на Рівненщині, згодом продовжив підготовку в Черкаській області. Уже в квітні його було переведено на Харківський напрямок.</p>
+                
+                <p>30 квітня 2026 року Віталій Малюшевський загинув внаслідок ворожих атак поблизу населеного пункту Піщане на Харківщині.</p>
+                
+                <p>Звістка про його загибель стала болючим ударом для всієї родини, друзів, близьких та знайомих. Важко знайти слова, які могли б передати біль цієї втрати.</p>
+                
+                <p>Та попри смуток, у серцях усіх, хто знав Віталія, назавжди залишиться пам'ять про світлу, добру та життєрадісну человеку. Люблячий син, турботливий брат, надійний друг, працьовитий господар і щирий українець — саме таким його пам'ятатимуть усі, кому пощастило йти поруч із ним життєвою дорогою.</p>
+                
+                <div class="bio-honor">
+                    Світла пам'ять Герою.<br>
+                    Вічна шана і вдячність Віталію Малюшевському за його життя, доброту, людяність та жертовність заради України.
+                </div>
+            </div>
+        </div>
+
+        <!-- ФУТЕР -->
+        <div class="footer">
+            Сторінку створено родиною з глибокою любов'ю та повагою.
+        </div>
+
+    </div>
+    
+<script>
+    const player = document.getElementById('memorial-player');
+    const audioSource = document.getElementById('audio-source');
+    const playBtn = document.getElementById('custom-play-btn');
+    const prevBtn = document.getElementById('custom-prev-btn');
+    const nextBtn = document.getElementById('custom-next-btn');
+    const progressBar = document.getElementById('progress-bar');
+    const progressContainer = document.getElementById('progress-container');
+    const timeDisplay = document.getElementById('time-display');
+    
+    const playerAuthor = document.getElementById('player-author');
+    const playerName = document.getElementById('player-name');
+    const playlistItems = Array.from(document.querySelectorAll('#playlist .track-item'));
+    
+    const allTracks = [
+        {
+            src: "vmp3/Останній лист.mp3",
+            author: "BIG.PASHAMAN",
+            name: "Останній лист Віталія Малюшевського",
+            isMainOnly: true
+        },
+        ...playlistItems.map(item => ({
+            src: item.getAttribute('data-src'),
+            author: item.getAttribute('data-author'),
+            name: item.getAttribute('data-name'),
+            element: item
+        }))
+    ];
+    
+    let currentTrackIndex = 0; 
+
+    function initMemorialSite() {
+        const overlay = document.getElementById('intro-overlay');
+        currentTrackIndex = 0; 
+        updateUI(); 
+        
+        player.play().then(() => {
+            playBtn.innerText = '⏸';
+            playBtn.style.paddingLeft = '0px';
+        }).catch(error => {
+            console.log("Очікування файлів музики:", error);
+        });
+
+        overlay.style.opacity = '0';
+        setTimeout(() => {
+            overlay.style.visibility = 'hidden';
+        }, 800);
+    }
+
+    function togglePlay(forcePlay = false) {
+        if (player.paused || forcePlay) {
+            player.play().then(() => {
+                playBtn.innerText = '⏸';
+                playBtn.style.paddingLeft = '0px';
+                updateUI();
+            }).catch(error => {
+                console.log("Помилка відтворення:", error);
+            });
+        } else {
+            player.pause();
+            playBtn.innerText = '▶';
+            playBtn.style.paddingLeft = '2px';
+            updateUI();
+        }
+    }
+
+    function changeTrack(index) {
+        if (index < 0) index = allTracks.length - 1;
+        if (index >= allTracks.length) index = 0;
+        
+        currentTrackIndex = index;
+        const track = allTracks[currentTrackIndex];
+        
+        audioSource.src = track.src;
+        player.load();
+        
+        playerAuthor.innerText = track.author;
+        playerName.innerText = track.name;
+        
+        updateUI();
+        togglePlay(true);
+    }
+
+    function updateUI() {
+        const isPlaying = !player.paused;
+        
+        playlistItems.forEach(item => {
+            item.classList.remove('active');
+            item.querySelector('.track-icon').innerText = '▶';
+        });
+
+        if (currentTrackIndex > 0) {
+            const currentTrack = allTracks[currentTrackIndex];
+            if (currentTrack.element) {
+                currentTrack.element.classList.add('active');
+                currentTrack.element.querySelector('.track-icon').innerText = isPlaying ? '⏸' : '▶';
+            }
+        }
+    }
+
+    playBtn.addEventListener('click', () => togglePlay());
+    prevBtn.addEventListener('click', () => changeTrack(currentTrackIndex - 1));
+    nextBtn.addEventListener('click', () => changeTrack(currentTrackIndex + 1));
+
+    playlistItems.forEach((item, index) => {
+        item.addEventListener('click', function() {
+            changeTrack(index + 1);
+        });
+    });
+
+    player.addEventListener('timeupdate', () => {
+        if (player.duration) {
+            const progressPercent = (player.currentTime / player.duration) * 100;
+            progressBar.style.width = `${progressPercent}%`;
+
+            const currentMins = Math.floor(player.currentTime / 60);
+            const currentSecs = Math.floor(player.currentTime % 60).toString().padStart(2, '0');
+            timeDisplay.innerText = `${currentMins}:${currentSecs}`;
+        }
+    });
+
+    progressContainer.addEventListener('click', (e) => {
+        const width = progressContainer.clientWidth;
+        const clickX = e.offsetX;
+        const duration = player.duration;
+        if (duration) {
+            player.currentTime = (clickX / width) * duration;
+        }
+    });
+
+    player.addEventListener('ended', () => {
+        changeTrack(currentTrackIndex + 1);
+    });
+</script>
+
+</body>
+</html>
