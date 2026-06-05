@@ -86,7 +86,7 @@
         /* Блок 1: Головний екран */
         .hero-section {
             text-align: center;
-            padding: 30px 10px;
+            padding: 30px 10px 10px 10px;
         }
 
         .profile-photo {
@@ -108,15 +108,15 @@
 
         .dates {
             font-size: 14px;
-            color: #a0a0a0; /* Легкий сірий колір для дат, як на табличці */
+            color: #a0a0a0; 
             margin-bottom: 15px;
             font-weight: bold;
         }
 
-        /* ОНОВЛЕНІ СТИЛІ ДЛЯ ТЕКСТУ ТА ЧЕРВОНИХ ЛІНІЙ */
+        /* СТИЛІ ДЛЯ ТЕКСТУ ТА ЧЕРВОНИХ ЛІНІЙ (ЯК НА ТАБЛИЧЦІ) */
         .hero-details {
             font-size: 14px;
-            color: #ffffff; /* Текст тепер чисто білий */
+            color: #ffffff; 
             font-style: normal;
             line-height: 1.6;
             margin: 15px auto 20px auto;
@@ -181,7 +181,37 @@
             box-shadow: 0 4px 10px rgba(0,0,0,0.3);
         }
 
-        /* Блок 2: Плеєр та Музика */
+        /* СТИЛІ ДЛЯ БЛОКУ БІОГРАФІЇ */
+        .bio-text {
+            font-size: 15px;
+            line-height: 1.7;
+            color: #e0e0e0;
+            text-align: justify;
+        }
+
+        .bio-text p {
+            margin-top: 0;
+            margin-bottom: 15px;
+            text-indent: 15px; /* Абзацний відступ */
+        }
+
+        .bio-text p:last-child {
+            margin-bottom: 0;
+        }
+
+        .bio-honor {
+            text-align: center;
+            font-style: italic;
+            font-weight: bold;
+            color: #d4af37;
+            margin-top: 20px;
+            font-size: 16px;
+            line-height: 1.6;
+            border-top: 1px solid rgba(212, 175, 55, 0.2);
+            padding-top: 15px;
+        }
+
+        /* Блок: Плеєр та Музика */
         .audio-intro {
             font-size: 14px;
             color: #b0b0b0;
@@ -370,7 +400,6 @@
 </head>
 <body>
 
-    <!-- ЕКРАН-ЗАСТАВКА З ФОНОМ (Захист від блокування звуку) -->
     <div id="intro-overlay">
         <div class="heart">💔💔💔</div>
         <div class="intro-title"><div>Віталій</div> <div>Малюшевський</div></div>
@@ -380,13 +409,11 @@
 
     <div class="container">
 
-        <!-- БЛОК 1: ГОЛОВНИЙ ЕКРАН -->
         <div class="hero-section">
             <img src="vimg/01.jpg" alt="Фото Віталіка" class="profile-photo">
             <h1>ВІТАЛІЙ МАЛЮШЕВСЬКИЙ</h1>
             <div class="dates">29.09.2000 — 30.04.2026</div>
             
-            <!-- БЛОК ДЕТАЛЕЙ З БІЛИМ ТЕКСТОМ ТА ЧЕРВОНИМИ ЛІНІЯМИ -->
             <div class="hero-details">
                 Загинув поблизу н.п. Піщане,
                 Харківської області
@@ -398,20 +425,33 @@
 
         <hr>
 
-        <!-- БЛОК 2: МУЗИКА ЙОГО ДУШІ -->
+        <div class="block">
+            <h2>Життєвий шлях Героя</h2>
+            <div class="bio-text">
+                <p>Напередодні повномасштабного вторгнення Віталій приїхав додому на свята. В останні роки через роботу за кордоном не завжди мав можливість бути поруч із родиною в такі моменти. Після свят планував знову повернутися на роботу за кордон, однак війна змінила всі плани.</p>
+                <p>У грудні, у віці 25 років, Віталія було призвано на військову службу. Спочатку він проходив навчання на Рівненщині, згодом продовжил підготовку в Черкаській області. Уже в квітні його було переведено на Харківський напрямок.</p>
+                <p>30 квітня 2026 року Віталій Малюшевський загинув внаслідок ворожих атак поблизу населеного пункту Піщане на Харківщині.</p>
+                <p>Звістка про його загибель стала болючим ударом для всієї родини, друзів, близьких та знайомих. Важко знайти слова, які могли б передати біль цієї втрати.</p>
+                <p>Та попри смуток, у серцях усіх, хто знав Віталія, назавжди залишиться пам'ять про світлу, добру та життєрадісну людину. Люблячий син, турботливий брат, надійний друг, працьовитий господар і щирий українець — саме таким його пам'ятатимуть усі, кому пощастило йти поруч із ним життєвою дорогою.</p>
+                
+                <div class="bio-honor">
+                    Світла пам'ять Герою.<br>
+                    Вічна шана і вдячність Віталію Малюшевському за його життя, доброту, людяність та жертовність заради України.
+                </div>
+            </div>
+        </div>
+
         <div class="block">
             <h2>Музика його душі</h2>
             <div class="audio-intro">
                 Віталік не уявляв свого життя без музики. Його фірмова колонка завжди була рядом — і в будні, і в свята, наповнюючи наше подвір'я звуками, під які хотілося жити.
             </div>
             
-            <!-- Базовий тег аудіо -->
             <audio id="memorial-player" preload="auto">
                 <source id="audio-source" src="vmp3/Останній лист.mp3" type="audio/mpeg">
                 Ваш браузер не підтримує аудіоплеєр.
             </audio>
 
-            <!-- НАЛАШТОВАНИЙ КАСТОМНИЙ ПЛЕЄР -->
             <div class="custom-player-container">
                 <div class="track-main-title">
                     <span id="player-author" class="track-author">BIG.PASHAMAN</span>
@@ -433,7 +473,6 @@
 
             <div class="playlist-title">Улюблені пісні Віталіка:</div>
             
-            <!-- ІНТЕРАКТИВНИЙ СПИСОК ПІСЕНЬ -->
             <ul class="track-list" id="playlist">
                 <li class="track-item" data-src="vmp3/khlystun.mp3" data-author="Василь Хлистун" data-name="Хлопці будем жити">
                     <span class="track-icon">▶</span> 
@@ -466,7 +505,6 @@
             </div>
         </div>
 
-        <!-- БЛОК 3: СПОВІДЬ ГЕРОЯ -->
         <div class="block">
             <h2>Його сповідь перед рідними</h2>
             <div class="poem-text">
@@ -487,7 +525,6 @@
             </div>
         </div>
 
-        <!-- БЛОК 4: ЖИВА ПАМ'ЯТЬ -->
         <div class="block">
             <h2>Таким ми його пам'ятаємо</h2>
             <div class="audio-intro" style="margin-bottom: 10px;">
@@ -501,7 +538,6 @@
             </div>
         </div>
 
-        <!-- ФУТЕР -->
         <div class="footer">
             Сторінку створено родиною з глибокою любов'ю та повагою.
         </div>
@@ -522,7 +558,7 @@
     const playerName = document.getElementById('player-name');
     const playlistItems = Array.from(document.querySelectorAll('#playlist .track-item'));
     
-    // Повний масив треків: Останній лист (індекс 0) + всі інші пісні зі списку HTML
+    // Повний масив треків
     const allTracks = [
         {
             src: "vmp3/Останній лист.mp3",
@@ -538,15 +574,22 @@
         }))
     ];
     
-    let currentTrackIndex = 0; // Починаємо з 0 (Останній лист)
+    let currentTrackIndex = 0; 
 
     function initMemorialSite() {
         const overlay = document.getElementById('intro-overlay');
         
         currentTrackIndex = 0; 
-        updateUI(); // Робимо всі іконки в списку однаковими ▶
+        updateUI(); 
         
-        togglePlay(true);
+        // Спроба відтворення з безпечним обробником помилок (запобігає зависанню кнопки)
+        player.play().then(() => {
+            playBtn.innerText = '⏸';
+            playBtn.style.paddingLeft = '0px';
+        }).catch(error => {
+            console.log("Аудіофайл ще не завантажено на GitHub, але сайт відкриваємо:", error);
+        });
+
         overlay.style.opacity = '0';
         setTimeout(() => {
             overlay.style.visibility = 'hidden';
@@ -560,7 +603,7 @@
                 playBtn.style.paddingLeft = '0px';
                 updateUI();
             }).catch(error => {
-                console.log("Помилка відтворення:", error);
+                console.log("Не вдалося відтворити файл:", error);
             });
         } else {
             player.pause();
@@ -590,13 +633,11 @@
     function updateUI() {
         const isPlaying = !player.paused;
         
-        // Скидаємо активні класи та іконки для всіх елементів списку
         playlistItems.forEach(item => {
             item.classList.remove('active');
             item.querySelector('.track-icon').innerText = '▶';
         });
 
-        // Якщо зараз грає пісня зі списку (індекс > 0)
         if (currentTrackIndex > 0) {
             const currentTrack = allTracks[currentTrackIndex];
             if (currentTrack.element) {
@@ -604,7 +645,6 @@
                 currentTrack.element.querySelector('.track-icon').innerText = isPlaying ? '⏸' : '▶';
             }
         }
-        // Якщо грає "Останній лист" (індекс 0) — у списку всі значки залишаються ▶ і активного класу немає
     }
 
     playBtn.addEventListener('click', () => togglePlay());
